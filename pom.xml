@@ -66,7 +66,6 @@
         <pitest-junit5-plugin.version>1.1.2</pitest-junit5-plugin.version>
         <pitest-maven.version>1.13.0</pitest-maven.version>
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
-        <system-lambda.version>1.2.1</system-lambda.version>
         <versions-maven-plugin.version>2.15.0</versions-maven-plugin.version>
         <!-- @formatter:on -->
     </properties>
@@ -101,12 +100,6 @@
             <groupId>io.kotest</groupId>
             <artifactId>kotest-assertions-core-jvm</artifactId>
             <version>${kotest.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.github.stefanbirkner</groupId>
-            <artifactId>system-lambda</artifactId>
-            <version>${system-lambda.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
