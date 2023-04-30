@@ -6,14 +6,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>hm.binkley</groupId>
-    <artifactId>kotlin-sekwences</artifactId>
+    <artifactId>sekwences</artifactId>
     <version>0-SNAPSHOT</version>
 
-    <name>kotlin-sekwences</name>
+    <name>sekwences</name>
     <description>
         Explore various math sequences with kotlin
     </description>
-    <url>https://github.com/binkley/kotlin-sekwences</url>
+    <url>https://github.com/binkley/sekwences</url>
     <licenses>
         <license>
             <name>Public Domain</name>
@@ -23,12 +23,12 @@
     </licenses>
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/binkley/kotlin-sekwences/issues</url>
+        <url>https://github.com/binkley/sekwences/issues</url>
     </issueManagement>
     <scm>
-        <connection>scm:git:git://github.com/binkley/kotlin-sekwences
+        <connection>scm:git:git://github.com/binkley/sekwences
         </connection>
-        <url>https://github.com/binkley/kotlin-sekwences</url>
+        <url>https://github.com/binkley/sekwences</url>
     </scm>
 
     <properties>
@@ -49,15 +49,13 @@
         <kotlin.version>1.8.21</kotlin.version>
         <ktlint-maven-plugin.version>1.16.0</ktlint-maven-plugin.version>
         <lombok.version>1.18.26</lombok.version>
-        <maven-assembly-plugin.version>3.4.2</maven-assembly-plugin.version>
+        <main.class>demo.KotlinMainKt</main.class>
+        <maven-assembly-plugin.version>3.5.0</maven-assembly-plugin.version>
         <maven-clean-plugin.version>3.2.0</maven-clean-plugin.version>
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
         <maven-dependency-plugin.version>3.2.0</maven-dependency-plugin.version>
         <maven-enforcer-plugin.version>3.3.0</maven-enforcer-plugin.version>
         <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
-        <maven-project-info-reports-plugin.version>3.4.2</maven-project-info-reports-plugin.version>
-        <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
-        <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
         <maven-surefire-plugin.version>3.0.0</maven-surefire-plugin.version>
         <maven-wrapper-plugin.version>3.2.0</maven-wrapper-plugin.version>
         <maven.test.skip>false</maven.test.skip> <!-- Make linter happy -->
@@ -163,11 +161,6 @@
                 <version>${maven-clean-plugin.version}</version>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>${maven-resources-plugin.version}</version>
-            </plugin>
-            <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-maven-plugin</artifactId>
                 <version>${kotlin.version}</version>
@@ -231,6 +224,34 @@
                         <phase>test-compile</phase>
                         <goals>
                             <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven-jar-plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>${maven-assembly-plugin.version}</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>${main.class}</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
                         </goals>
                     </execution>
                 </executions>
