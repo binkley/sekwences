@@ -37,8 +37,9 @@ Each sequence value `a[n+1]` is `f(a[n])` until exceeding `M`.
 Then the _excess_ of `f(a[n])` over `M` is subtracted from `M` and, and that
 result is `a[n+1]`.
 
-Assume that `M`, `a1`, and the result of `f` are non-negative integers, and
-that `a1` and the result of `f` are bounded by `0 <= value <= M`.
+Assume that `M`, `a1`, and the result of `f` are non-negative integers, and that
+`a1` is bounded by `0 <= value <= M`, and that repeated application of `f`
+eventually results in bounded values (as in the assumption for `a1`).
 
 Present code explores `M` equal to 100, and `f` equal to `2n` (doubling the
 previous value).
@@ -47,6 +48,6 @@ Questions to explore:
 - Do all values for `a1` result in cycles?
 - What are distinct cycles sharing no values in common?
 - How does changing `M` change cycles?
-- What functions `f` produce cycles given the assumptions?
-- What functions `f` produce cycles when relaxing assumptions?
+- How does changing `f` change cycles?
 - What combinations of `M`, `a1`, and `f` maximize or minimize cycle lenghths?
+- What happens when relaxing assumptions?
