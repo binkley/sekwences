@@ -33,8 +33,12 @@ There are no run-time dependencies beyond the Kotlin standard library.
 * Given a starting value (seed), `a1` less than `M`
 * Given a function, `f`, such that `a[n+1] = f(a[n])`
 
-Presently assuming that `a1`, `M` and the result of `f` are all non-negative
-integers, and that `a1` is less than or equal to `M`.
+Each sequence value `a[n+1]` is `f(a[n])` until exceeding `M`.
+Then the _excess_ of `f(a[n])` over `M` is subtracted from `M` and, and that
+result is `a[n+1]`.
+
+Assume that `M`, `a1`, and the result of `f` are non-negative integers, and
+that `a1` and the result of `f` are bounded by `0 <= value <= M`.
 
 Present code explores `M` equal to 100, and `f` equal to `2n` (doubling the
 previous value).
@@ -44,5 +48,6 @@ Questions to explore:
 - What are "prime" cycles? That is, are there unique portions of cycles for
   all `a[n]` such that every cycle eventuall joins these?
 - How does changing `M` change cycles?
-- What functions `f` produce cycles?
+- What functions `f` produce cycles given the assumptions?
+- What functions `f` produce cycles when relaxing assumptions?
 - What combinations of `M`, `a1`, and `f` maximize or minimize cycle lenghths?
