@@ -1,5 +1,5 @@
 package hm.binkley.math.sequences
 
-val flipFlop = sequence {
-    yield(0)
+fun flipFlop(seed: Int) = sequence {
+    yield(seed)
 }
