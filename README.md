@@ -22,3 +22,27 @@ Try `./batect run` for a demonstration as CI would.
 
 This project assumes JDK 17.
 There are no run-time dependencies beyond the Kotlin standard library.
+
+## Sequences
+
+### "Flip-flop"
+
+"Flip-flop" refers to a sequence defined as:
+
+* Given a maximum (cap) value, `M`
+* Given a starting value (seed), `a1` less than `M`
+* Given a function, `f`, such that `a[n+1] = f(a[n])`
+
+Presently assuming that `a1`, `M` and the result of `f` are all non-negative
+integers, and that `a1` is less than or equal to `M`.
+
+Present code explores `M` equal to 100, and `f` equal to `2n` (doubling the
+previous value).
+
+Questions to explore:
+- Do all values for `a1` result in cycles?
+- What are "prime" cycles? That is, are there unique portions of cycles for
+  all `a[n]` such that every cycle eventuall joins these?
+- How does changing `M` change cycles?
+- What functions `f` produce cycles?
+- What combinations of `M`, `a1`, and `f` maximize or minimize cycle lenghths?
