@@ -15,13 +15,10 @@ Explore various math sequences in Kotlin.
 ## Build and try
 
 To build, use `./mvnw clean verify`.
-
 Try `./run` for a demonstration.
 
-There are no run-time dependencies beyond the Kotlin standard library.
-
 To build as CI would, use `./batect build`.
-
 Try `./batect run` for a demonstration as CI would.
 
-This code builds and passes tests and checks on JDK 17.
+This project assumes JDK 17.
+There are no run-time dependencies beyond the Kotlin standard library.
