@@ -28,6 +28,12 @@ internal class FlipFlopTest {
     }
 
     @Test
+    fun `should cycle for a seed of 7`() {
+        flipFlop(7).take(5).toList() shouldBe
+            listOf(7, 14, 28, 56, 88)
+    }
+
+    @Test
     fun `should cycle for a seed of 100`() {
         flipFlop(100).take(2).toList() shouldBe listOf(100, 0)
     }
