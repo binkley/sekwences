@@ -7,12 +7,11 @@
 
     <groupId>hm.binkley</groupId>
     <artifactId>sekwences</artifactId>
-    <version>2.2.1-SNAPSHOT</version>
+    <version>0-SNAPSHOT</version>
 
     <name>sekwences</name>
     <description>
-        Immutable, infinite-precision "BigRational" (ratio, fraction) classes
-        for Kotlin, akin to `BigDecimal` or `BigInteger`
+        Explore various math sequences in Kotlin
     </description>
     <url>https://github.com/binkley/sekwences</url>
     <licenses>
