@@ -45,8 +45,7 @@ previous value).
 
 Questions to explore:
 - Do all values for `a1` result in cycles?
-- What are "prime" cycles? That is, are there unique portions of cycles for
-  all `a[n]` such that every cycle eventuall joins these?
+- What are distinct cycles sharing no values in common?
 - How does changing `M` change cycles?
 - What functions `f` produce cycles given the assumptions?
 - What functions `f` produce cycles when relaxing assumptions?
