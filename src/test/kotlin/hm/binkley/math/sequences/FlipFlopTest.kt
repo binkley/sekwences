@@ -20,4 +20,10 @@ internal class FlipFlopTest {
         flipFlop(3).take(14).toList() shouldBe
             listOf(3, 6, 12, 24, 48, 96, 8, 16, 32, 64, 72, 56, 88, 24)
     }
+
+    @Test
+    fun `should cycle for of seed of 5`() {
+        flipFlop(5).take(6).toList() shouldBe
+            listOf(5, 10, 20, 40, 80, 40)
+    }
 }
