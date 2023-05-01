@@ -1,6 +1,12 @@
 package hm.binkley.math.sequences
 
-fun flipFlop(seed: Int) = generateSequence(seed) {
-    val more = 2 * it
-    if (more <= 100) more else 100 - (more - 100)
+class FlipFlop(val seed: Int) : Sequence<Int> {
+    override fun iterator() = generateSequence(seed) {
+        val next = 2 * it
+        if (next <= 100) next else 100 - (next - 100)
+    }.iterator()
+
+    companion object {
+        fun flipFlop(seed: Int) = FlipFlop(seed)
+    }
 }

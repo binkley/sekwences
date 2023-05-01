@@ -1,6 +1,6 @@
 package demo
 
-import hm.binkley.math.sequences.flipFlop
+import hm.binkley.math.sequences.FlipFlop.Companion.flipFlop
 
 /** Runs the demo. */
 public fun main() {

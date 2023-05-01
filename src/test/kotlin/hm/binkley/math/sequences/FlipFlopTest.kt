@@ -1,9 +1,15 @@
 package hm.binkley.math.sequences
 
+import hm.binkley.math.sequences.FlipFlop.Companion.flipFlop
 import io.kotest.matchers.shouldBe
 import org.junit.jupiter.api.Test
 
 internal class FlipFlopTest {
+    @Test
+    fun `should show the seed`() {
+        flipFlop(99).seed shouldBe 99
+    }
+
     @Test
     fun `should cycle immediately for a seed of 0`() {
         flipFlop(0).take(2).toList() shouldBe listOf(0, 0)
