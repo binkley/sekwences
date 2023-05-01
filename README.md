@@ -51,3 +51,8 @@ Questions to explore:
 - How does changing `f` change cycles?
 - What combinations of `M`, `a1`, and `f` maximize or minimize cycle lenghths?
 - What happens when relaxing assumptions?
+
+## Reading
+
+- [_Inside Sequences: Create Your Own Sequence
+  Operations_](https://typealias.com/guides/inside-kotlin-sequences/)
