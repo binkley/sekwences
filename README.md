@@ -29,16 +29,16 @@ There are no run-time dependencies beyond the Kotlin standard library.
 
 "Flip-flop" refers to a sequence defined as:
 
-* Given a maximum (cap) value, `M`
+* Given a open boundary (cap) value, `M`
 * Given a starting value (seed), `a1` less than `M`
 * Given a function, `f`, such that `a[n+1] = f(a[n])`
 
-Each sequence value `a[n+1]` is `f(a[n])` until exceeding `M`.
+Each sequence value `a[n+1]` is `f(a[n])` until reaching `M` or greater.
 Then the _excess_ of `f(a[n])` over `M` is subtracted from `M` and, and that
 result is `a[n+1]`.
 
 Assume that `M`, `a1`, and the result of `f` are non-negative integers, and that
-`a1` is bounded by `0 <= value <= M`, and that repeated application of `f`
+`a1` is bounded by `0 <= value < M`, and that repeated application of `f`
 eventually results in bounded values (as in the assumption for `a1`).
 
 Present code explores `M` equal to 100, and `f` equal to `2n` (doubling the
