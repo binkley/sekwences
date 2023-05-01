@@ -7,12 +7,17 @@ import org.junit.jupiter.api.Test
 internal class FlipFlopTest {
     @Test
     fun `should show the cap`() {
-        FlipFlop(99, 0).cap shouldBe 99
+        flipFlop(0, 99) { 2 * it }.cap shouldBe 99
     }
 
     @Test
     fun `should show the seed`() {
         flipFlop(99).seed shouldBe 99
+    }
+
+    @Test
+    fun `should use the compute function`() {
+        flipFlop(33) { it }.take(2).toList() shouldBe listOf(33, 33)
     }
 
     @Test
