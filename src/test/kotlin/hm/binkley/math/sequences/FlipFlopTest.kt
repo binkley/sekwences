@@ -6,13 +6,13 @@ import org.junit.jupiter.api.Test
 
 internal class FlipFlopTest {
     @Test
-    fun `should show the cap`() {
-        flipFlop(0, 99) { 2 * it }.cap shouldBe 99
+    fun `should show the seed`() {
+        flipFlop(99).seed shouldBe 99
     }
 
     @Test
-    fun `should show the seed`() {
-        flipFlop(99).seed shouldBe 99
+    fun `should show the cap`() {
+        flipFlop(0, 99).cap shouldBe 99
     }
 
     @Test

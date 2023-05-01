@@ -1,8 +1,8 @@
 package hm.binkley.math.sequences
 
-class FlipFlop(
-    val cap: Int,
+class FlipFlop private constructor(
     val seed: Int,
+    val cap: Int,
     private val compute: (Int) -> Int,
 ) : Sequence<Int> {
     override fun iterator() = generateSequence(seed) {
@@ -21,6 +21,6 @@ class FlipFlop(
             cap: Int = 100,
             compute: (Int) -> Int = { 2 * it },
         ) =
-            FlipFlop(cap, seed, compute)
+            FlipFlop(seed, cap, compute)
     }
 }
