@@ -1,11 +1,11 @@
 package hm.binkley.math.sequences
 
 /** @todo How to specify by type that the map is in insertion order? */
-fun findLoop(sequence: Sequence<Int>): List<Int> {
-    val findLoop = mutableListOf<Int>()
+fun findSelfLoop(sequence: Sequence<Int>): List<Int> {
+    val findSelfLoop = mutableListOf<Int>()
     for (next in sequence)
-        if (next in findLoop) break else findLoop += next
-    return findLoop
+        if (next in findSelfLoop) break else findSelfLoop += next
+    return findSelfLoop
 }
 
 class FlipFlop private constructor(
