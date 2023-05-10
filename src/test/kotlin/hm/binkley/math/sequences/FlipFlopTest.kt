@@ -58,4 +58,10 @@ internal class FlipFlopTest {
     fun `should cycle for a seed of 100`() {
         flipFlop(100).take(2).toList() shouldBe listOf(100, 0)
     }
+
+    @Test
+    fun `should find loops`() {
+        findLoop(sequenceOf()) shouldBe listOf()
+        findLoop(sequenceOf(1, 2, 3, 2)) shouldBe listOf(1, 2, 3)
+    }
 }
