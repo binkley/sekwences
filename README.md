@@ -56,3 +56,4 @@ Questions to explore:
 
 - [_Inside Sequences: Create Your Own Sequence
   Operations_](https://typealias.com/guides/inside-kotlin-sequences/)
+- [_On-Line Encyclopedia of Integer Sequences_](https://oeis.org/wiki/Main_Page)
