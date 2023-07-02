@@ -29,28 +29,28 @@ There are no run-time dependencies beyond the Kotlin standard library.
 
 "Flip-flop" refers to a sequence defined as:
 
-* Given a open boundary (cap) value, `M`
+* Given non-negative integers
+* Given an open boundary (cap) value, `M`
 * Given a starting value (seed), `a1` less than `M`
-* Given a function, `f`, such that `a[n+1] = f(a[n])`
+* Given a function, `f`, such the next sequence value `f(current value)`
+* When the current sequence value exceeds the cap, subtract the _overage_
+  from the cap; that is the next sequence value
+* Stop when seeing a previously seen sequence value (you have found a loop)
 
-Each sequence value `a[n+1]` is `f(a[n])` until reaching `M` or greater.
-Then the _excess_ of `f(a[n])` over `M` is subtracted from `M` and, and that
-result is `a[n+1]`.
-
-Assume that `M`, `a1`, and the result of `f` are non-negative integers, and that
-`a1` is bounded by `0 <= value < M`, and that repeated application of `f`
-eventually results in bounded values (as in the assumption for `a1`).
-
-Present code explores `M` equal to 100, and `f` equal to `2n` (doubling the
-previous value).
+This code explores `M` equal to 100, and `f` equal to `2X` (doubling the
+previous value), and impact of adjusting `M` or `f`.
 
 Questions to explore:
-- Do all values for `a1` result in cycles?
-- What are distinct cycles sharing no values in common?
+- Do all values result in cycles smaller than exhausting the entire range?
+- What are distinct cycles sharing no values in common? These are orthogonal (in some sense)
 - How does changing `M` change cycles?
 - How does changing `f` change cycles?
-- What combinations of `M`, `a1`, and `f` maximize or minimize cycle lenghths?
-- What happens when relaxing assumptions?
+- What minimizes or maximizes cycle lengths?
+- Are there non-trivial isolated cycles that only repeat to themselves?
+  (A trivial example is starting with `0` as a sequence seed and using `2x` as
+  the function to compute the next sequence value.)
+
+This sequence was a bedtime exercise akin to "counting sheep."
 
 ## Reading
 
