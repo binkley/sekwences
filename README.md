@@ -32,7 +32,9 @@ There are no run-time dependencies beyond the Kotlin standard library.
 * Given non-negative integers
 * Given an open boundary (cap) value, `M`
 * Given a starting value (seed), `a1` less than `M`
-* Given a function, `f`, such the next sequence value `f(current value)`
+* Given a function, `f`, such the next sequence value `f(current value)`.
+  `f` is essentially a "fold left" function that starts with the initial seed
+  value
 * When the current sequence value exceeds the cap, subtract the _overage_
   from the cap; that is the next sequence value
 * Stop when seeing a previously seen sequence value (you have found a loop)
@@ -50,7 +52,8 @@ Questions to explore:
   (A trivial example is starting with `0` as a sequence seed and using `2x` as
   the function to compute the next sequence value.)
 - What are restrictions on `f` to stay "close" within range?
-  For example `e^x` blows up but does produce a cycle
+  Should sequence expectations stay within some range?
+  For example `e^x` blows up (exceeds expected bounds) but does produce a cycle
 
 This sequence was a bedtime exercise akin to "counting sheep."
 
