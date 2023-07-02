@@ -19,49 +19,42 @@ fun main() {
     demo(
         "An example with a seed of 1 showing a cycle:",
         1,
-        100
-    ) { it * 2 }
+    )
 
     demo(
         "An example with a seed of 7 showing merging into a seed of 1:",
         7,
-        100
-    ) { it * 2 }
+    )
 
     demo(
         "67 turns out to be an interesting seed making a spiral of values:",
         67,
-        100
-    ) { it * 2 }
+    )
 
     demo(
         "Show the boring case of a seed of 0:",
         0,
-        100
-    ) { it * 2 }
+    )
 
     demo(
         "Another short cycle seed is 50:",
         50,
-        100
-    ) { it * 2 }
+    )
 
     demo(
         "The seed with the longest run length:",
         findLongestSequence(100) { it * 2 },
-        100
-    ) { it * 2 }
+    )
 
     demo(
         "The same when boundary is 120 (rather than 100):",
         findLongestSequence(120) { it * 2 },
         120
-    ) { it * 2 }
+    )
 
     demo(
         "An example of a different function than 2X (2X + 1):",
         1,
-        100
     ) { it * 2 + 1 }
 
     demo(
@@ -73,15 +66,14 @@ fun main() {
     demo(
         "A pathological function for the next sequence value (exponential):",
         1,
-        100
     ) { exp(it.toDouble()).toInt() } // "toInt" here is round to zero
 }
 
 private fun demo(
     description: String,
     seed: Int,
-    cap: Int,
-    compute: (Int) -> Int,
+    cap: Int = 100,
+    compute: (Int) -> Int = { 2 * it },
 ) {
     println()
     println(description)
