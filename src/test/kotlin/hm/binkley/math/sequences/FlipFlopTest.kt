@@ -61,7 +61,8 @@ internal class FlipFlopTest {
 
     @Test
     fun `should find loops`() {
-        findSelfLoop(sequenceOf()) shouldBe listOf()
-        findSelfLoop(sequenceOf(1, 2, 3, 2)) shouldBe listOf(1, 2, 3)
+        findSelfLoop(0) shouldBe listOf(0)
+        findSelfLoop(1) shouldBe
+            listOf(1, 2, 4, 8, 16, 32, 64, 72, 56, 88, 24, 48, 96)
     }
 }

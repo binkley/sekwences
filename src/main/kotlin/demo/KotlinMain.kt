@@ -1,9 +1,7 @@
 package demo
 
-import hm.binkley.math.sequences.FlipFlop.Companion.flipFlop
 import hm.binkley.math.sequences.findSelfLoop
 import kotlin.math.exp
-import kotlin.math.floor
 
 /** Runs the demo. */
 fun main() {
@@ -77,7 +75,7 @@ private fun demo(
 ) {
     println()
     println(description)
-    val sequence = findSelfLoop(flipFlop(seed, cap, compute))
+    val sequence = findSelfLoop(seed, cap, compute)
     println(sequence.joinToString())
     println("(length before repeating is ${sequence.size})")
 }
@@ -89,7 +87,7 @@ private fun findLongestSequence(
     var maxSeed = 0
     var maxLength = 0
     for (seed in 0..cap) {
-        val sequence = findSelfLoop(flipFlop(seed, cap, compute))
+        val sequence = findSelfLoop(seed, cap, compute)
         if (maxLength < sequence.size) {
             maxSeed = seed
             maxLength = sequence.size

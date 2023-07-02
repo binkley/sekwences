@@ -1,10 +1,23 @@
 package hm.binkley.math.sequences
 
-/** @todo How to specify by type that the map is in insertion order? */
-fun findSelfLoop(sequence: Sequence<Int>): List<Int> {
+import hm.binkley.math.sequences.FlipFlop.Companion.flipFlop
+
+fun findSelfLoop(
+    seed: Int,
+    cap: Int = 100,
+    compute: (Int) -> Int = { 2 * it }
+): List<Int> {
+    val itr = flipFlop(seed, cap, compute).iterator()
+
     val findSelfLoop = mutableListOf<Int>()
-    for (next in sequence)
+    do {
+        // TODO: Technically, the contract for iterator wants a call to
+        //  "hasNext" even for the first element guaranteed to be present,
+        //  however this confuses JaCoCo branch coverage
+        val next = itr.next() // Always has at least 1 value
         if (next in findSelfLoop) break else findSelfLoop += next
+    } while (itr.hasNext())
+
     return findSelfLoop
 }
 
@@ -18,8 +31,8 @@ class FlipFlop private constructor(
         if (maybe < cap) {
             maybe
         } else {
-            val excess = maybe - cap
-            cap - excess
+            val overage = maybe - cap
+            cap - overage
         }
     }.iterator()
 
