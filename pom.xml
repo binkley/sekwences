@@ -82,7 +82,7 @@
     <dependencies>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-stdlib</artifactId>
+            <artifactId>kotlin-stdlib-jdk8</artifactId>
             <version>${kotlin.version}</version>
         </dependency>
 
@@ -109,14 +109,11 @@
             <version>${kotlin.version}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-stdlib-jdk8</artifactId>
-            <version>${kotlin.version}</version>
-        </dependency>
     </dependencies>
 
     <build>
+        <!-- TODO: Pitest needs to see these; IntelliJ Kotlin support does not
+              like them, and wants them in plugin settings. -->
         <sourceDirectory>src/main/kotlin</sourceDirectory>
         <testSourceDirectory>src/test/kotlin</testSourceDirectory>
 
@@ -168,7 +165,9 @@
                 <version>${kotlin.version}</version>
                 <configuration>
                     <args>
-                        <arg>-Werror</arg>
+                        <!-- TODO: Reenable compiler warnings when issue with
+                              "duplicate source root" resolved -->
+<!--                        <arg>-Werror</arg>-->
                     </args>
                     <javaParameters>true</javaParameters>
                     <languageVersion>1.8</languageVersion>
@@ -181,6 +180,12 @@
                         <goals>
                             <goal>compile</goal>
                         </goals>
+                        <configuration>
+                            <sourceDirs>
+                                <source>src/main/kotlin</source>
+                                <source>target/generated-sources/annotations</source>
+                            </sourceDirs>
+                        </configuration>
                     </execution>
                     <execution>
                         <id>test-compile</id>
@@ -190,6 +195,10 @@
                         </goals>
                         <configuration>
                             <skip>${maven.test.skip}</skip>
+                            <sourceDirs>
+                                <source>src/test/kotlin</source>
+                                <source>target/generated-test-sources/test-annotations</source>
+                            </sourceDirs>
                         </configuration>
                     </execution>
                 </executions>
@@ -223,6 +232,20 @@
                     </execution>
                     <execution>
                         <id>java-test-compile</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>testCompile</id>
                         <phase>test-compile</phase>
                         <goals>
                             <goal>testCompile</goal>
