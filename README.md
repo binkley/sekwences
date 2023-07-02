@@ -49,6 +49,8 @@ Questions to explore:
 - Are there non-trivial isolated cycles that only repeat to themselves?
   (A trivial example is starting with `0` as a sequence seed and using `2x` as
   the function to compute the next sequence value.)
+- What are restrictions on `f` to stay "close" within range?
+  For example `e^x` blows up but does produce a cycle
 
 This sequence was a bedtime exercise akin to "counting sheep."
 

@@ -2,6 +2,8 @@ package demo
 
 import hm.binkley.math.sequences.FlipFlop.Companion.flipFlop
 import hm.binkley.math.sequences.findSelfLoop
+import kotlin.math.exp
+import kotlin.math.floor
 
 /** Runs the demo. */
 fun main() {
@@ -67,6 +69,12 @@ fun main() {
         1,
         120
     ) { it * 2 + 1 }
+
+    demo(
+        "A pathological function for the next sequence value (exponential):",
+        1,
+        100
+    ) { exp(it.toDouble()).toInt() }
 }
 
 private fun demo(
