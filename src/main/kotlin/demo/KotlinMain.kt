@@ -74,7 +74,7 @@ fun main() {
         "A pathological function for the next sequence value (exponential):",
         1,
         100
-    ) { exp(it.toDouble()).toInt() }
+    ) { exp(it.toDouble()).toInt() } // "toInt" here is round to zero
 }
 
 private fun demo(
