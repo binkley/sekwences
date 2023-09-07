@@ -6,8 +6,8 @@ align="right" width="20%" height="auto"/>
 # Sekwences
 
 [![build](https://github.com/binkley/sekwences/workflows/build/badge.svg)](https://github.com/binkley/sekwences/actions)
-[![issues](https://img.shields.io/github/issues/binkley/sekwences.svg)](https://github.com/binkley/sekwences/issues/)
 [![pull requests](https://img.shields.io/github/issues-pr/binkley/sekwences.svg)](https://github.com/binkley/sekwences/pulls)
+[![issues](https://img.shields.io/github/issues/binkley/sekwences.svg)](https://github.com/binkley/sekwences/issues/)
 [![vulnerabilities](https://snyk.io/test/github/binkley/sekwences/badge.svg)](https://snyk.io/test/github/binkley/sekwences)
 [![license](https://img.shields.io/badge/license-Public%20Domain-blue.svg)](http://unlicense.org/)
 
