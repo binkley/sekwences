@@ -65,7 +65,7 @@
         <owasp.nvdApiKey>${env.OWASP_NVD_API_KEY}</owasp.nvdApiKey>
         <owasp.skip>false</owasp.skip>
         <pitest-junit5-plugin.version>1.2.1</pitest-junit5-plugin.version>
-        <pitest-maven.version>1.17.0</pitest-maven.version>
+        <pitest-maven.version>1.17.1</pitest-maven.version>
         <project.build.sourceEncoding>${java.charset}</project.build.sourceEncoding>
         <versions-maven-plugin.version>2.17.1</versions-maven-plugin.version>
         <!-- @formatter:on -->
